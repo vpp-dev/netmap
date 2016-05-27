@@ -34,6 +34,10 @@
 #ifndef _NET_NETMAP_KERN_H_
 #define _NET_NETMAP_KERN_H_
 
+#ifdef NETMAP_LINUX_HAVE_CONFIG_NET_NS
+#undef CONFIG_NET_NS
+#endif
+
 #if defined(linux)
 
 #if  defined(CONFIG_NETMAP_VALE)

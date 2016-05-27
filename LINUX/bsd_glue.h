@@ -64,6 +64,10 @@
 /*----- support for compiling on older versions of linux -----*/
 #include "netmap_linux_config.h"
 
+#ifdef NETMAP_LINUX_HAVE_CONFIG_NET_NS
+#undef CONFIG_NET_NS
+#endif
+
 #ifndef NETMAP_LINUX_HAVE_HRTIMER_MODE_REL
 #define HRTIMER_MODE_REL	HRTIMER_REL
 #endif

@@ -2475,6 +2475,11 @@ struct miscdevice netmap_cdevsw = { /* same name as FreeBSD */
 static int linux_netmap_init(void)
 {
 	int err;
+#ifdef CONFIG_NET_NS
+	printk("config netns is enabled\n");
+#else
+	printk("config netns is disabled\n");
+#endif
 	/* Errors have negative values on linux. */
 	err = -netmap_init();
 	if (err) {

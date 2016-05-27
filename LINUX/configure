@@ -881,6 +881,16 @@ add_test 'have SET_CHANNELS' <<-EOF
 	}
 EOF
 
+# disable namespaces for vale switch
+add_test 'have CONFIG_NET_NS' <<-EOF
+
+	int
+	dummy(void) {
+		return 0;
+	}
+
+EOF
+
 # pernet_operations id field
 add_test 'have PERNET_OPS_ID' <<-EOF
 	#include <net/net_namespace.h>
